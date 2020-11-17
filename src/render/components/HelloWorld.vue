@@ -15,8 +15,4 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
-h1
-  color: #00c13c
 
-</style>

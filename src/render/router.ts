@@ -1,26 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from './views/Index.vue'
-import Create from './views/Create.vue'
+import Home from './views/Home.vue'
 
-const router:any = createRouter({
+const router = createRouter({
   history: createWebHistory('/'),
   routes: [
     {
         path: '/',
-        name: 'index',
-        component: Index as any,
+        name: 'home',
+        component: Home,
         meta: {
-            title: '首页'
+            title: 'Homepage'
         }
     },
-    {
-        path: '/create',
-        name: 'create',
-        component: Create as any,
-        meta: {
-            title: '创建'
-        }
-    }
   ]
 })
 
