@@ -10,7 +10,8 @@
     "dev:ele": "node script/build --env=development --watch",
     "build:vue": "vite build",
     "build:ele": "node script/build --env=production",
-    "build": "npm run build:vue && npm run build:ele && electron-builder"
+    "build": "npm run build:vue && npm run build:ele && electron-builder",
+    "vuedev": "vue-devtools"
   },
   "build": {
     "appId": "simone.ungaro@devlounge.it",
@@ -47,30 +48,33 @@
   },
   "dependencies": {
     "electron-is-dev": "^1.2.0",
-    "electron-store": "^6.0.0",
+    "electron-store": "^6.0.1",
     "tailwindcss": "^1.9.6",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-beta.13"
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-rc.5",
+    "vuex": "^4.0.0-rc.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.0.2",
+    "autoprefixer": "^9.8.6",
     "chalk": "^4.1.0",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "electron": "latest",
-    "electron-builder": "^22.8.0",
+    "electron-builder": "^22.9.1",
     "electron-connect": "^0.6.3",
+    "electron-devtools-installer": "^3.1.1",
     "minimist": "^1.2.5",
-    "ora": "^5.0.0",
+    "ora": "^5.1.0",
     "process": "^0.11.10",
-    "rollup-plugin-esbuild": "^2.4.2",
-    "sass": "^1.26.10",
-    "typescript": "^3.9.7",
+    "rollup-plugin-esbuild": "^2.5.2",
+    "sass": "^1.29.0",
+    "shell": "^0.5.0",
+    "typescript": "^4.1.2",
     "vite": "latest",
     "wait-on": "^5.2.0"
   },

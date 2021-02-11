@@ -1,20 +1,8 @@
 import { join } from 'path'
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow } from 'electron'
 import is_dev from 'electron-is-dev'
 import dotenv from 'dotenv'
-import Store from 'electron-store'
-
-const store = new Store()
-ipcMain.on('store:set', async (e, args) => {
-  store.set(args.key, args.value)
-})
-ipcMain.handle('store:get', async (e, args) => {
-  return await store.get(args)
-})
-ipcMain.on('store:delete', async (e, args) => {
-  store.delete(args)
-})
-
+import './ipcMain'
 dotenv.config({ path: join(__dirname, '../../.env') })
 
 let win = null
@@ -22,7 +10,7 @@ let win = null
 class createWin {
   constructor () {
     win = new BrowserWindow({
-      width: 330,
+      width: 1900,
       height: 700,
       webPreferences: {
         nodeIntegration: true,
@@ -33,8 +21,11 @@ class createWin {
     const URL = is_dev
       ? `http://localhost:${process.env.PORT}`
       : `file://${join(__dirname, '../../dist/render/index.html')}`
-  
+
     win.loadURL(URL)
+    //win.removeMenu()
+    // Open the DevTools.
+    win.webContents.openDevTools()
   }
 }
 
